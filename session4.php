@@ -9,6 +9,15 @@ var_dump(filter_var($RESULT ,FILTER_VALIDATE_EMAIL));
 
 // echo var_dump(filter_var($age , FILTER_SANITIZE_STRING));
 
+// $text = "<h1>test</h1>";
+    // echo htmlspecialchars($text) . "<br>";
+
+    // $test = "   test               test      ";
+    // echo trim($test) . "<br>";
+
+    // echo stripcslashes("\ahseg\\mm") . "<br>";
+
+
 // $id = "10%^&###12";
 // echo var_dump( filter_var($id , FILTER_SANITIZE_NUMBER_INT));
 

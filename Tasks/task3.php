@@ -8,13 +8,7 @@ linkedin url = [required | url] -->
 
 <?php
 
-    // $text = "<h1>test</h1>";
-    // echo htmlspecialchars($text) . "<br>";
-
-    // $test = "   test               test      ";
-    // echo trim($test) . "<br>";
-
-    // echo stripcslashes("\ahseg\\mm") . "<br>";
+    
 
     include 'functions.php';
 

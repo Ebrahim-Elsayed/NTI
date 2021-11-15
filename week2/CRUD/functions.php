@@ -36,6 +36,11 @@
                     $status = false;
                 }
                 break;
+            case 5: 
+                if(!filter_var($input,FILTER_VALIDATE_INT)){
+                    $status = false;
+                }
+                break;
         }
 
         return $status;

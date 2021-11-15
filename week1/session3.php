@@ -1,9 +1,9 @@
 <?php
-// $students =[
-//     ['ebrahim',24,'shobra'],
-//     ['ahmed' , 20 , "alex"],
-//     ['nader' , 30 , "nasrcity"]
-// ]; 
+$students =[
+    ['ebrahim',24,'shobra'],
+    ['ahmed' , 20 , "alex"],
+    ['nader' , 30 , "nasrcity"]
+]; 
 
 // for ($i=0; $i < 3 ; $i++) { 
 //     for ($j=0; $j < 3 ; $j++) { 
@@ -11,12 +11,12 @@
 // }
 // }
 
-// foreach ($students as $key => $value) {
-//     foreach ($value as  $inerarray) {
-//         echo $inerarray . "||";
-//     }
-//     echo "<br>";
-// }
+foreach ($students as $key => $value) {
+    foreach ($value as  $inerarray) {
+        echo $inerarray . "||";
+    }
+    echo "<br>";
+}
 // $text = "php,c++,c#,js,ruby";
 // $array = explode("," , $text);
 

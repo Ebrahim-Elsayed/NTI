@@ -73,7 +73,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
         if(in_array($final_ext , $extentions)){
             // upload code
             $finalName = time().rand(). "." . $final_ext;
-            $finalPath = './../uploads'.$finalName;
+            $finalPath = '../uploads/'.$finalName;
 
             if(move_uploaded_file($file_tmp , $finalPath)){
                 // echo "file uploaded succesfuly";

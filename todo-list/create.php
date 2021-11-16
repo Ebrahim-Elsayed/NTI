@@ -25,9 +25,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(!validate($descr , 1)){
         $errors['description'] = 'field is required';
     }
+    
+    // validate description
+    if(!validate($start_date , 1)){
+        $errors['description'] = 'field is required';
+    }
+
+    // validate description
+    if(!validate($end_date , 1)){
+        $errors['description'] = 'field is required';
+    }
 
     
-
     if (count($errors) > 0) {
         foreach ($errors as $key => $value) {
             echo '* ' . $key . ' : ' . $value . "<br>";

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$db_name     = "nti";
+$db_name     = "bloger";
 $db_server   = 'localhost';
 $db_user     = "root";
 $db_password = "";

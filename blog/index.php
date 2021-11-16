@@ -1,21 +1,18 @@
 <?php
 require 'config.php';
-require 'checkLogin.php';
 
-$sql = "select * from users";
+$sql = "SELECT * from blog";
 
 $op  = mysqli_query($conn ,$sql);
 
-// var_dump($op);
 
-// while($data = mysqli_fetch_assoc($op)) ;
 
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>PDO - Read Records - PHP CRUD Tutorial</title>
+    <title>blog</title>
 
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -23,15 +20,15 @@ $op  = mysqli_query($conn ,$sql);
     <!-- custom css -->
     <style>
         .m-r-1em {
-            margin-right: 1em;
+            margin-right: 2%;
         }
 
         .m-b-1em {
-            margin-bottom: 1em;
+            margin-bottom: 2em;
         }
 
         .m-l-1em {
-            margin-left: 1em;
+            margin-left: 2em;
         }
 
         .mt0 {
@@ -46,19 +43,18 @@ $op  = mysqli_query($conn ,$sql);
     <!-- container -->
     <div class="container">
         <div class="page-header">
-            <h1>Read Users </h1>
+            <h1>MY BLOGS </h1>
             <br>
         </div>
 
+        <a href="create.php">+ Blog</a>
         <?php 
         
-           if(isset($_SESSION['message'])){
-               echo $_SESSION['message'];
+           if(isset( $_SESSION['message'])){
+               echo  $_SESSION['message'];
                unset($_SESSION['message']);
            }
-        
         ?>
-        <a href="create.php">+ Account</a>
 
         <!-- PHP code to read records will be here -->
 
@@ -66,23 +62,22 @@ $op  = mysqli_query($conn ,$sql);
             <!-- creating our table heading -->
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>LinkedIn</th>
-                <th>action</th>
+                <th>title</th>
+                <th>content</th>
+                <th>image</th>
             </tr>
 
             <?php 
             while($data = mysqli_fetch_assoc($op)){
             ?>
             <tr>
-                <td><?php echo $data['id'];?></td>
-                <td><?php echo $data['name'];?></td>
-                <td><?php echo $data['email'];?></td>
-                <td><?php echo $data['linkedin'];?></td>
+                <td><?= $data['id']?></td>
+                <td><?php echo $data['title'];?></td>
+                <td><?php echo $data['content'];?></td>
+                <td><img src="<?php echo $_SESSION['path']  ;?>" style="width: 100px ; hieght: 40px; " alt=""></td>
                 <td>
-                    <a href='delete.php?id=<?php echo $data['id'];?>' class='btn btn-danger m-r-1em'>Delete</a>
-                    <a href='edit.php?id=<?php echo $data['id'];?>' class='btn btn-primary m-r-1em'>Edit</a>
+                    <a href='delete.php?id=<?php echo $data['id'];?>' class='btn btn-danger '>Delete</a>
+                    <a href='edit.php?id=<?php echo $data['id'];?>'   class='btn btn-primary '>Edit</a>
                 </td>
             </tr>
             <?php  } ?>

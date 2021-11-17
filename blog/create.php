@@ -64,10 +64,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($operation) {
             echo 'blog created succusfully';
+
+            header('location: index.php');
         }else{
             echo 'error try again';
         }
     }
+
+
     mysqli_close($conn);
 }
 

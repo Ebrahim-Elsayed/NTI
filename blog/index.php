@@ -69,12 +69,15 @@ $op  = mysqli_query($conn ,$sql);
 
             <?php 
             while($data = mysqli_fetch_assoc($op)){
+
+                //  print_r($data);
+
             ?>
             <tr>
                 <td><?= $data['id']?></td>
                 <td><?php echo $data['title'];?></td>
                 <td><?php echo $data['content'];?></td>
-                <td><img src="<?php echo $_SESSION['path']  ;?>" style="width: 100px ; hieght: 40px; " alt=""></td>
+                <td><img src="../uploads/<?php echo $data['image'] ;?>" style="width: 100px ; hieght: 40px; " alt=""></td>
                 <td>
                     <a href='delete.php?id=<?php echo $data['id'];?>' class='btn btn-danger '>Delete</a>
                     <a href='edit.php?id=<?php echo $data['id'];?>'   class='btn btn-primary '>Edit</a>

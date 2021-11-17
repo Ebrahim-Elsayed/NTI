@@ -63,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $operation = mysqli_query($conn ,$sql);
         
+        
         if(move_uploaded_file($file_tmp , $finalPath)){
             $errors[] = "file uploaded succesfuly";
         }else{
@@ -74,6 +75,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }else{
             $message =  'error try again';
         }
+
+        unlink( '../uploads/' . $data['image']);
 
         $_SESSION['message'] = $message;
 
